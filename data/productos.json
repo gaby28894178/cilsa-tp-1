@@ -1,0 +1,152 @@
+{
+    "categorias": [
+        {
+            "id": "audio",
+            "nombre": "Audio Premium"
+        },
+        {
+            "id": "smart-home",
+            "nombre": "Smart Home"
+        },
+        {
+            "id": "computing",
+            "nombre": "Computing"
+        },
+        {
+            "id": "electronica",
+            "nombre": "Electrónica"
+        }
+    ],
+    "destacados": [
+        {
+            "id": 1,
+            "nombre": "Audífonos Premium",
+            "descripcion": "Immersive noise cancellation for crystal-clear audio experience.",
+            "precio": 49.99,
+            "icono": "bi-headphones",
+            "imagen": "",
+            "colorSlide": "slide-1"
+        },
+        {
+            "id": 2,
+            "nombre": "Smartwatch Pro",
+            "descripcion": "Health and performance tracking with elegant design.",
+            "precio": 89.99,
+            "icono": "bi-smartwatch",
+            "imagen": "",
+            "colorSlide": "slide-2"
+        },
+        {
+            "id": 3,
+            "nombre": "Parlante Bluetooth",
+            "descripcion": "Waterproof speaker with 20h battery and deep bass.",
+            "precio": 35.99,
+            "icono": "bi-speaker",
+            "imagen": "",
+            "colorSlide": "slide-3"
+        }
+    ],
+    "productos": [
+        {
+            "id": 4,
+            "nombre": "Pulse Pro X1",
+            "descripcion": "Next-gen processing meets stunning visual clarity.",
+            "precio": 12.99,
+            "icono": "bi-phone",
+            "imagen": "https://tiendanewsan.com.ar/media/catalog/product/cache/e16223670af7ae8877a6c2db5c335df1/p/l/pla7b_iafbsm0003.jpg",
+            "categoria": "electronica"
+        },
+        {
+            "id": 5,
+            "nombre": "SonicWave Over-Ear",
+            "descripcion": "Immersive noise cancellation for crystal-clear audio.",
+            "precio": 59.99,
+            "icono": "bi-headphones",
+            "imagen": "",
+            "categoria": "audio"
+        },
+        {
+            "id": 6,
+            "nombre": "Pulse Core Watch",
+            "descripcion": "Health and performance tracking with style.",
+            "precio": 29.99,
+            "icono": "bi-smartwatch",
+            "imagen": "",
+            "categoria": "electronica"
+        },
+        {
+            "id": 7,
+            "nombre": "Webcam HD Pro",
+            "descripcion": "4K streaming with auto-focus and low light.",
+            "precio": 44.99,
+            "icono": "bi-webcam",
+            "imagen": "",
+            "categoria": "computing"
+        },
+        {
+            "id": 8,
+            "nombre": "NeonKey Mechanical",
+            "descripcion": "RGB backlit mechanical keyboard for gaming.",
+            "precio": 59.99,
+            "icono": "bi-keyboard",
+            "imagen": "",
+            "categoria": "computing"
+        },
+        {
+            "id": 9,
+            "nombre": "LumiSphere LED",
+            "descripcion": "Smart RGB lamp with voice control.",
+            "precio": 24.99,
+            "icono": "bi-lamp",
+            "imagen": "",
+            "categoria": "smart-home"
+        },
+        {
+            "id": 10,
+            "nombre": "PowerVault 20K",
+            "descripcion": "20000mAh fast charging power bank.",
+            "precio": 34.99,
+            "icono": "bi-battery-charging",
+            "imagen": "",
+            "categoria": "electronica"
+        },
+        {
+            "id": 11,
+            "nombre": "AirPulse Buds",
+            "descripcion": "Active noise cancellation with spatial audio.",
+            "precio": 69.99,
+            "icono": "bi-earbuds",
+            "imagen": "",
+            "categoria": "audio"
+        }
+    ],
+    "ofertas": [
+        {
+            "id": 12,
+            "nombre": "Pack Gamer",
+            "precioOriginal": 120.00,
+            "precio": 84.00,
+            "descuento": "-30%",
+            "icono": "bi-controller",
+            "imagen": ""
+        },
+        {
+            "id": 13,
+            "nombre": "Combo Audio",
+            "precioOriginal": 99.99,
+            "precio": 49.99,
+            "descuento": "-50%",
+            "icono": "bi-music-note-beamed",
+            "imagen": ""
+        },
+        {
+            "id": 14,
+            "nombre": "Kit Oficina",
+            "precioOriginal": 75.00,
+            "precio": 56.25,
+            "descuento": "-25%",
+            "icono": "bi-briefcase",
+            "imagen": ""
+        }
+    ]
+}

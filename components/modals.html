@@ -1,0 +1,86 @@
+<!-- Modal de Registro -->
+<div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header modal-purple border-0">
+                <h5 class="modal-title fw-bold" id="registroModalLabel">
+                    <i class="bi bi-person-plus me-2"></i>Crear Cuenta
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form id="formRegistro">
+                    <div class="mb-3">
+                        <label for="regNombre" class="form-label fw-semibold small">Nombre completo</label>
+                        <input type="text" class="form-control" id="regNombre" placeholder="Juan Pérez" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="regEmail" class="form-label fw-semibold small">Email</label>
+                        <input type="email" class="form-control" id="regEmail" placeholder="juan@email.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="regPassword" class="form-label fw-semibold small">Contraseña</label>
+                        <input type="password" class="form-control" id="regPassword" placeholder="Mínimo 6 caracteres" required minlength="6">
+                    </div>
+                    <div class="mb-3">
+                        <label for="regPassword2" class="form-label fw-semibold small">Confirmar contraseña</label>
+                        <input type="password" class="form-control" id="regPassword2" placeholder="Repite tu contraseña" required>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="regTerminos" required>
+                        <label class="form-check-label small" for="regTerminos">
+                            Acepto los <a href="#" class="text-purple">términos y condiciones</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-purple w-100 fw-bold py-2">
+                        <i class="bi bi-check-circle me-2"></i>Registrarme
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Compra / Carrito -->
+<div class="modal fade" id="compraModal" tabindex="-1" aria-labelledby="compraModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header modal-blue border-0">
+                <h5 class="modal-title fw-bold" id="compraModalLabel">
+                    <i class="bi bi-cart-check me-2"></i>Tu Carrito
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div id="listaCarrito">
+                    <p class="text-center text-muted py-4"><i class="bi bi-cart-x fs-1 d-block mb-2"></i>Tu carrito está vacío</p>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold mb-0">Total:</h6>
+                    <h5 class="fw-bold text-purple mb-0" id="totalCarrito">$0.00</h5>
+                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-outline-danger btn-sm" onclick="vaciarCarrito()">
+                    <i class="bi bi-trash me-1"></i>Vaciar
+                </button>
+                <button type="button" class="btn btn-primary-custom" onclick="finalizarCompra()">
+                    <i class="bi bi-credit-card me-1"></i>Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toastNotificacion" class="toast align-items-center text-bg-success border-0" role="alert">
+        <div class="d-flex">
+            <div class="toast-body fw-bold" id="toastMensaje">
+                Producto agregado al carrito
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
