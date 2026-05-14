@@ -12,7 +12,7 @@ function guardarCarrito() {
     localStorage.setItem('shopcolor_carrito', JSON.stringify(carrito));
 }
 
-// Inicializar UI del carrito (se llama después de cargar navbar)
+// Inicializar UI del carrito (se llama despues de cargar navbar)
 function inicializarCarritoUI() {
     const btnCarrito = document.getElementById('btnCarrito');
     if (btnCarrito) {
@@ -34,11 +34,11 @@ function inicializarCarritoUI() {
             const password2 = document.getElementById('regPassword2').value;
 
             if (password !== password2) {
-                mostrarToast('⚠️ Las contraseñas no coinciden', 'warning');
+                mostrarToast('Las contrasenas no coinciden', 'warning');
                 return;
             }
 
-            mostrarToast(`🎉 ¡Bienvenido ${nombre}! Registro exitoso`, 'success');
+            mostrarToast('Bienvenido ' + nombre + '! Registro exitoso', 'success');
             const modal = bootstrap.Modal.getInstance(document.getElementById('registroModal'));
             modal.hide();
             this.reset();
@@ -58,7 +58,7 @@ function agregarAlCarrito(nombre, precio) {
 
     guardarCarrito();
     actualizarContador();
-    mostrarToast(`✅ ${nombre} agregado al carrito`);
+    mostrarToast(nombre + ' agregado al carrito');
 }
 
 // Actualizar contador del carrito
@@ -78,7 +78,7 @@ function actualizarVistaCarrito() {
     if (!listaCarrito || !totalCarrito) return;
 
     if (carrito.length === 0) {
-        listaCarrito.innerHTML = '<p class="text-center text-muted"><i class="bi bi-cart-x fs-1 d-block mb-2"></i>Tu carrito está vacío</p>';
+        listaCarrito.innerHTML = '<p class="text-center text-muted py-4"><i class="bi bi-cart-x fs-1 d-block mb-2"></i>Tu carrito esta vacio</p>';
         totalCarrito.textContent = '$0.00';
         return;
     }
@@ -89,24 +89,22 @@ function actualizarVistaCarrito() {
     carrito.forEach((item, index) => {
         const subtotal = item.precio * item.cantidad;
         total += subtotal;
-        html += `
-            <div class="carrito-item">
-                <div>
-                    <h6 class="mb-0 fw-bold">${item.nombre}</h6>
-                    <small class="text-muted">$${item.precio.toFixed(2)} x ${item.cantidad}</small>
-                </div>
-                <div class="d-flex align-items-center gap-2">
-                    <span class="fw-bold text-purple">$${subtotal.toFixed(2)}</span>
-                    <button class="btn btn-sm btn-outline-danger" onclick="eliminarDelCarrito(${index})">
-                        <i class="bi bi-x-lg"></i>
-                    </button>
-                </div>
-            </div>
-        `;
+        html += '<div class="carrito-item">' +
+            '<div>' +
+            '<h6 class="mb-0 fw-bold">' + item.nombre + '</h6>' +
+            '<small class="text-muted">$' + item.precio.toFixed(2) + ' x ' + item.cantidad + '</small>' +
+            '</div>' +
+            '<div class="d-flex align-items-center gap-2">' +
+            '<span class="fw-bold text-purple">$' + subtotal.toFixed(2) + '</span>' +
+            '<button class="btn btn-sm btn-outline-danger" onclick="eliminarDelCarrito(' + index + ')">' +
+            '<i class="bi bi-x-lg"></i>' +
+            '</button>' +
+            '</div>' +
+            '</div>';
     });
 
     listaCarrito.innerHTML = html;
-    totalCarrito.textContent = `$${total.toFixed(2)}`;
+    totalCarrito.textContent = '$' + total.toFixed(2);
 }
 
 // Eliminar producto del carrito
@@ -128,13 +126,13 @@ function vaciarCarrito() {
     guardarCarrito();
     actualizarContador();
     actualizarVistaCarrito();
-    mostrarToast('🗑️ Carrito vaciado');
+    mostrarToast('Carrito vaciado');
 }
 
 // Finalizar compra
 function finalizarCompra() {
     if (carrito.length === 0) {
-        mostrarToast('⚠️ Tu carrito está vacío', 'warning');
+        mostrarToast('Tu carrito esta vacio', 'warning');
         return;
     }
 
@@ -148,18 +146,19 @@ function finalizarCompra() {
     const compraModal = bootstrap.Modal.getInstance(document.getElementById('compraModal'));
     if (compraModal) compraModal.hide();
 
-    mostrarToast(`🎉 ¡Compra realizada! Total: $${total.toFixed(2)}`, 'success');
+    mostrarToast('Compra realizada! Total: $' + total.toFixed(2), 'success');
 }
 
-// Mostrar toast de notificación
-function mostrarToast(mensaje, tipo = 'success') {
+// Mostrar toast de notificacion
+function mostrarToast(mensaje, tipo) {
+    tipo = tipo || 'success';
     const toastEl = document.getElementById('toastNotificacion');
     const toastMensaje = document.getElementById('toastMensaje');
 
     if (!toastEl || !toastMensaje) return;
 
     toastMensaje.textContent = mensaje;
-    toastEl.className = `toast align-items-center text-bg-${tipo} border-0`;
+    toastEl.className = 'toast align-items-center text-bg-' + tipo + ' border-0';
     const toast = new bootstrap.Toast(toastEl, { delay: 2500 });
     toast.show();
 }
